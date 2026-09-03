@@ -1,11 +1,117 @@
-# Overview
-The C-Program-Course repository provides a comprehensive collection of C programming course materials and examples, covering various fundamental concepts and techniques.
 
-# Features
-This repository includes a wide range of C programming topics, such as pointers, functions, recursive functions, arrays, and more, with accompanying executable files for easy testing and learning.
 
-# Installation
-To use the materials in this repository, simply clone the repository to your local machine and compile the C files using a C compiler, such as GCC, to generate executable files.
+```
+  ██████╗     ██████╗ ██████╗  ██████╗  ██████╗ 
+ ██╔════╝     ██╔══██╗██╔══██╗██╔════╝ ██╔════╝ 
+ ██║  ███╗    ██████╔╝██████╔╝██║  ███╗██║      
+ ██║   ██║    ██╔═══╝ ██╔══██╗██║   ██║██║      
+ ╚██████╔╝    ██║     ██║  ██║╚██████╔╝╚██████╗ 
+  ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ 
 
-# Usage
-Browse through the repository's files to explore different C programming concepts, compile and run the provided C files, such as Pointers.c, FunctionsDeclaration.c, and RecursiveFunctions.c, to see the code in action and learn from the examples.
+```
+
+---
+
+### 🗺️ REPOSITORY PIPELINE FLOW
+
+```
+ ┌───────────────┐
+ │   ENTRY STAGE │ ──► [Variables, Types, Control Flow]
+ └───────┬───────┘
+         │
+         ▼
+ ┌───────────────┐
+ │ FUNCTION FLOW │ ──► [Prototypes] ──► [Call Stack] ──► [Scope Resolution]
+ └───────┬───────┘
+         │
+         ▼
+ ┌───────────────┐
+ │ MEMORY & PTRS │ ──► [Raw Addresses] ──► [Dereferencing] ──► [Double Pointers]
+ └───────┬───────┘
+         │
+         ▼
+ ┌───────────────┐
+ │ ADVANCED CORE │ ──► [Recursion Trees] ──► [Array Offsets] ──► [Alloc / Free]
+ └───────────────┘
+
+```
+
+---
+
+### 🧬 POINTER DEREFERENCING & STACK ENGINE
+
+```
+    [VARIABLE: val]                      [POINTER: ptr]
+   ┌───────────────┐                    ┌───────────────┐
+   │  DATA: 0x0045 │ ◄────── DEREF ─────┤ ADDR: 0x7FFF1 ├──► Value Access
+   └───────┬───────┘       (*ptr)       └───────────────┘
+           │
+           ▼
+     ADDR: 0x7FFF1 (Allocated Frame)
+
+```
+
+```
+ RECURSION CALL-STACK TRACE
+ ─────────────────────────────────────────────────────────────
+ CALL DEPTH          ACTIVE STACK FRAME         RETURN VALUE
+ ─────────────────────────────────────────────────────────────
+ Level 3:            factorial(1)               1
+ Level 2:            factorial(2)               2 * 1
+ Level 1:            factorial(3)               3 * 2
+ Level 0:            main()                     6 (TERMINATION)
+ ─────────────────────────────────────────────────────────────
+
+```
+
+---
+
+### 🗂️ EXECUTION GRAPH & REPO ARCHITECTURE
+
+```
+                           root/
+                             │
+     ┌───────────────────────┼───────────────────────┐
+     ▼                       ▼                       ▼
+  Functions/             Pointers/               Arrays/
+  ├── Declaration.c      ├── BasicPointers.c     ├── ArrayOffsets.c
+  └── Recursion.c        └── PointerArithmetic.c └── MultiDimArrays.c
+
+```
+
+---
+
+### ⚡ COMPILATION & RUNTIME MATRIX
+
+```
+ [Source Code: *.c] ──► [GCC Engine] ──► [-Wall -Werror] ──► [Target Binary: *.exe / *.out]
+
+```
+
+```bash
+# Clone
+git clone https://github.com/AkshatRaj00/C-Program-Course.git && cd C-Program-Course
+
+# Compile and Run Target
+gcc -Wall -O2 Pointers.c -o out && ./out
+
+```
+
+---
+
+### 📊 TELEMETRY & SYSTEM ANALYTICS
+
+---
+
+### 🤝 WORKFLOW PROTOCOL
+
+| Step 01 | Step 02 | Step 03 | Step 04 |
+| --- | --- | --- | --- |
+| **FORK CORE** | **FEATURE BRANCH** | **GCC STATIC AUDIT** | **PULL REQUEST** |
+
+---
+
+```
+  MAINTAINER: AKSHAT RAJ | REPOSITORY PROTOCOL
+
+```
